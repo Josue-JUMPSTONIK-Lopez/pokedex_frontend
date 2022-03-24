@@ -1,0 +1,87 @@
+.CreateAcount{
+    margin-top: 50px;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FormCA{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.FormCA--layout{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.FormCA--labels{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 20%;
+}
+
+.FormCA--inputs{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    width: 40%;
+}
+
+.FormCA--label{
+    margin-top: 19px;
+    font-size: 1.5rem;
+}
+.FormCA--input{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 5px 0;
+}
+
+.FormCA--select{
+    margin-top: 10px;
+    padding: 5px 0;
+    width: 100%;
+}
+
+
+.FormCA--button{
+    width: 100%;
+    padding: 10px;
+}
+
+@media screen and (min-width: 319px) {
+    .FormCA--layout{
+        width: 90%;
+    }
+    .FormCA--inputs{
+        width: 100%;
+    }
+    .FormCA--button{
+        width: 80%;
+
+    }
+  }
+  
+  @media screen and (min-width: 767px) {
+    .FormCA--layout{
+        width: 90%;
+    }
+    .FormCA--inputs{
+        width: 55%;
+    }
+    .FormCA--button{
+        width: 60%;
+        padding: 10px;
+    }
+  }

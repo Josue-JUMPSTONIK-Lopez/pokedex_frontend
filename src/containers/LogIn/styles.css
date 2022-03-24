@@ -1,0 +1,48 @@
+.FormLI--layout{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.FormLogIn{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.FormLogIn--label{
+    margin-top: 10px;
+    font-size: 2.5rem;
+}
+
+.FormLogIn--input{
+    padding: 5px;
+    font-size: 1.8rem;
+}
+
+.FormLogIn--button{
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 319px) {
+    .FormLogIn{
+        width: 90%;
+    }
+
+  }
+  
+  @media screen and (min-width: 767px) {
+    .FormLogIn{
+        width: 45%;
+    }
+  }
+
+  @media screen and (min-width: 1023px) {
+    .FormLogIn{
+        width: 40%;
+    }
+  }

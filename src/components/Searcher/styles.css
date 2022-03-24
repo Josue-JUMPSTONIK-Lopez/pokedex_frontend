@@ -1,0 +1,36 @@
+.Searcher {
+  
+  display: flex;
+  width: 60%;
+  /* justify-content: space-evenly; */
+  padding-left: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+img{
+  height: 80px;
+  width: 80px;
+}
+
+.searchBarInput{
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+}
+
+.searchBarInput:focus{
+  outline: none;
+}
+
+@media screen and (max-width: 320px) {
+  .Searcher{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Searcher{
+    width: 80%;
+  }
+}

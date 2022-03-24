@@ -1,58 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useEffect } from 'react';
+import Layout from './components/Layout';
+import Navbar from './components/Navbar';
+import Home from './containers/Home';
+import { usePokemons } from './customHooks/usePokemons';
+import {Routes, Route, BrowserRouter as Router} from 'react-router-dom'
+import { Account } from './containers/Account';
+import { useUsers } from './customHooks/useUsers';
+import { CreateAccount } from './containers/CreateAccount';
+import { PC } from './containers/PC';
+import { LogIn } from './containers/LogIn/index';
 
-function App() {
+
+const App = () => {
+
+  const {listOfPokemons, pokemonsLoaded} = usePokemons()
+  const {islogged, logIn, logOut} = useUsers();
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
-}
+  <Router>
+    <Navbar islogged={islogged} logIn={logIn} logOut={logOut}/>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<Home listOfPokemons={listOfPokemons} pokemonsLoaded={pokemonsLoaded} islogged={islogged}/>}/>
+        <Route path='Account' element={<Account/>}/>
+        <Route path='CreateAccount' element={<CreateAccount logIn={logIn}/>}/>
+        <Route path='LogIn' element={<LogIn logIn={logIn}/>}/>
+        <Route path='PC' element={<PC/>}/>
+      </Routes>
+    </Layout>
+  </Router>
+  ); 
+};
 
+// export default connect(mapStateToProps, mapDispatchToProps, App);
 export default App;
+
