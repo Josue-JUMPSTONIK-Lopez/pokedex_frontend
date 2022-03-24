@@ -9,12 +9,13 @@ import PokemonCard from '../../components/PokemonCard/PokemonCard';
 function Home(props:HomeProps) {
   return (
     <div className='Home'>
-      <Searcher />
+      <Searcher searchPokemon={props.searchPokemon} handleSearchPokemonChange={props.handleSearchPokemonChange} />
             {
               props.pokemonsLoaded ?
                     <PokemonList>
-                      {props.listOfPokemons.map((pokemon:PokemonsData) => 
-                        <PokemonCard key={pokemon.name} name={pokemon.name} picture={pokemon.picture} moves={pokemon.moves} gender={pokemon.gender} types={pokemon.types}/>)}
+                      {props.listOfPokemons.filter((pokemon:PokemonsData) => 
+                        pokemon.name.includes(props.searchPokemon))
+                        .map((pokemon:PokemonsData) => <PokemonCard key={pokemon.name} name={pokemon.name} picture={pokemon.picture} moves={pokemon.moves} gender={pokemon.gender} types={pokemon.types}/> )}
                     </PokemonList>
                     :
                     <p>Pokemons are not loaded still</p>

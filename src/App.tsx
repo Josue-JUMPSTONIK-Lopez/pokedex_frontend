@@ -13,7 +13,10 @@ import { LogIn } from './containers/LogIn/index';
 
 const App = () => {
 
-  const {listOfPokemons, pokemonsLoaded} = usePokemons()
+  const {listOfPokemons,
+    pokemonsLoaded,
+    searchPokemon,
+    handleSearchPokemonChange,} = usePokemons()
   const {islogged, logIn, logOut} = useUsers();
     
   return (
@@ -21,7 +24,13 @@ const App = () => {
     <Navbar islogged={islogged} logIn={logIn} logOut={logOut}/>
     <Layout>
       <Routes>
-        <Route path='/' element={<Home listOfPokemons={listOfPokemons} pokemonsLoaded={pokemonsLoaded} islogged={islogged}/>}/>
+        <Route path='/' element={<Home 
+            listOfPokemons={listOfPokemons} 
+            pokemonsLoaded={pokemonsLoaded} 
+            islogged={islogged} 
+            searchPokemon={searchPokemon}
+            handleSearchPokemonChange={handleSearchPokemonChange}
+            />}/>
         <Route path='Account' element={<Account/>}/>
         <Route path='CreateAccount' element={<CreateAccount logIn={logIn}/>}/>
         <Route path='LogIn' element={<LogIn logIn={logIn}/>}/>

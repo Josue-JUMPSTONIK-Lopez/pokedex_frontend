@@ -16,13 +16,22 @@ export const useCreateUser = (logIn: { (): void; (): void; }) => {
 
     const navigate = useNavigate();
 
+    function handleErrors(response:any) {
+        console.log(email, password)
+        if (!response.ok) {
+            throw Error(response.statusText);
+  
+        }
+        return response.json();
+    }
+
     const handleSubmit = (event: { preventDefault: () => void }) =>{
         // alert('hey')
         fetch('http://localhost:3001/api/v1/users/create-user',{
             method: 'POST',
             headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 name,
@@ -34,11 +43,18 @@ export const useCreateUser = (logIn: { (): void; (): void; }) => {
                 trainerClass,
                 password
             })
-          })
-        .then( res => res.json())
+        })
+        .then( handleErrors)
         .then( data => {
-            logIn()
             console.log(data);
+            localStorage.setItem('user_id', data[0].user_id)
+            localStorage.setItem('email', data[0].email)
+            localStorage.setItem('nickname', data[0].nickname)
+            localStorage.setItem('region', data[0].region)
+            localStorage.setItem('gender', data[0].gender)
+            localStorage.setItem('age', data[0].age)
+            localStorage.setItem('trainer_class', data[0].trainer_class)
+            logIn()
             navigate('/')
         })
         event.preventDefault();

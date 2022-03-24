@@ -1,25 +1,25 @@
 import React from 'react'
-
+import './styles.css'
 
 export const Account = () => {
   return (
-    <div>
-      <h1>User Informetion</h1>
-      <form action='' className='FormCA'>
-        <div className='FormCA--layout'>
-            <div className='FormCA--labels'>
-                <label className='FormCA--label' htmlFor="">Name</label>
-                <label className='FormCA--label' htmlFor="">Nickname</label>
-                <label className='FormCA--label' htmlFor="">Region</label>
-                <label className='FormCA--label' htmlFor="">Gender</label>
-                <label className='FormCA--label' htmlFor="">Age</label>
-                <label className='FormCA--label' htmlFor="">Email</label>
-                <label className='FormCA--label' htmlFor="">Trainer class</label>
+    <div className='UpdateUser'>
+      <h1>User Information</h1>
+      <form action='' className='FormUA'>
+        <div className='FormUA--layout'>
+            <div className='FormUA--labels'>
+                <label className='FormUA--label' htmlFor="">Name</label>
+                <label className='FormUA--label' htmlFor="">Nickname</label>
+                <label className='FormUA--label' htmlFor="">Region</label>
+                <label className='FormUA--label' htmlFor="">Gender</label>
+                <label className='FormUA--label' htmlFor="">Age</label>
+                <label className='FormUA--label' htmlFor="">Email</label>
+                <label className='FormUA--label' htmlFor="">Trainer class</label>
             </div>
-            <div className='FormCA--inputs'>
-                <input className='FormCA--input' type="text"/>
-                <input className='FormCA--input' type="text"/>
-                <select className='FormCA--select' name="" id="">
+            <div className='FormUA--inputs'>
+                <input className='FormUA--input' type="text"/>
+                <input className='FormUA--input' type="text"/>
+                <select className='FormUA--select' name="" id="">
                     <option value="">Kanto</option>
                     <option value="">Johto</option>
                     <option value="">Hoenn</option>
@@ -30,16 +30,16 @@ export const Account = () => {
                     <option value="">Galar</option>
                     <option value="">Hisui</option>
                 </select>
-                <input className='FormCA--input' type="text"/>
-                <input className='FormCA--input' type="text"/>
-                <input className='FormCA--input' type="text"/>
-                <select className='FormCA--select' name="" id="">
+                <input className='FormUA--input' type="text"/>
+                <input className='FormUA--input' type="text"/>
+                <input className='FormUA--input' type="text"/>
+                <select className='FormUA--select' name="" id="">
                     <option value="">Battle</option>
                     <option value="">Show</option>
                 </select>
             </div>
         </div>
-        <button type='submit' className='FormCA--button'>Create</button>
+        <button type='submit' className='FormUA--button'>Edit</button>
         <div></div>
     </form>
     </div>

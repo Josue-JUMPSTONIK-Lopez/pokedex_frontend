@@ -7,6 +7,7 @@ export const usePokemons = () => {
 
   const [listOfPokemons, setListOfPokemons] = useState<PokemonsData[]>([]);
   const [pokemonsLoaded, setPokemonsLoaded] = useState(false)
+  const [searchPokemon, setSearchPokemon] = useState("")
   
   
   useEffect(() => {
@@ -39,14 +40,18 @@ export const usePokemons = () => {
         types: pokeData.types.map( (type:any) => type.type.name),
       })
     })
-
-    // console.log(pokemonList)
-
     return pokemonList;
+  }
+
+  const handleSearchPokemonChange = (e: { target: { value: string; }; }) =>{
+    let {value} = e.target;
+      setSearchPokemon(value)
   }
   
   return {
     listOfPokemons,
-    pokemonsLoaded
+    pokemonsLoaded,
+    searchPokemon,
+    handleSearchPokemonChange,
   }
 }

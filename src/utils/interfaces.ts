@@ -24,7 +24,14 @@ export interface NavbarProps{
 export interface HomeProps{
     listOfPokemons: PokemonsData[]
     pokemonsLoaded: boolean,
-    islogged: boolean
+    islogged: boolean,
+    searchPokemon: string,
+    handleSearchPokemonChange: any
+}
+
+export interface SearchBarProps{
+    searchPokemon: string,
+    handleSearchPokemonChange: any
 }
 
 export interface CreatAccountProps{
