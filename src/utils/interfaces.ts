@@ -1,3 +1,4 @@
+import PokemonCard from '../components/PokemonCard/PokemonCard';
 export interface propTypes{
     children: React.ReactNode
 }
@@ -12,7 +13,18 @@ export interface PokemonsData{
      picture: string, 
      moves: string[], 
      gender: string[], 
-     types: string[]; 
+     types: string[]
+}
+
+export interface PokemonsCardProps{
+    name: string, 
+    picture: string, 
+    moves: string[], 
+    gender: string[], 
+    types: string[],
+    addPokemonUser: (name: string) => void,
+    removePokemonUser: any,
+    inHome: boolean
 }
 
 export interface NavbarProps{
@@ -24,9 +36,9 @@ export interface NavbarProps{
 export interface HomeProps{
     listOfPokemons: PokemonsData[]
     pokemonsLoaded: boolean,
-    islogged: boolean,
     searchPokemon: string,
-    handleSearchPokemonChange: any
+    addPokemonUser: (name: string) => void,
+    handleSearchPokemonChange: any,
 }
 
 export interface SearchBarProps{
@@ -47,4 +59,18 @@ export interface ProfileProps{
 
 export interface UseCreateUserProps{
     logOut: any
+}
+export interface PokemonCardUser{
+    poke_id: string,
+    trainer_id: string,
+    key_id: string,
+    name: string, 
+    picture: string, 
+    moves: string[], 
+    gender: string[], 
+    types: string[]
+}
+
+export interface PCProps{
+    addPokemonUser: (name: string) => void,
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export const useLogIn = (logIn : { (): void; (): void; }) => {
@@ -34,6 +34,7 @@ export const useLogIn = (logIn : { (): void; (): void; }) => {
         .then( data => {
             console.log(data);
             localStorage.setItem('user_id', data[0].user_id)
+            localStorage.setItem('name', data[0].name)
             localStorage.setItem('email', data[0].email)
             localStorage.setItem('nickname', data[0].nickname)
             localStorage.setItem('region', data[0].region)

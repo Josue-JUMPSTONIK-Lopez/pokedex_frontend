@@ -20,6 +20,16 @@
     align-self: center;
 }
 
+.genderAndName{
+    display: flex;
+    align-self: center;
+}
+
+.gender{
+    height: 18px;
+    width: 18px;
+}
+
 .Pokemon-types{
     margin: 5px 0;
     display: flex;
@@ -124,7 +134,7 @@ li{
     font-size: 1rem;
 }
 
-.favorite{
+.add{
     height: 30px;
     width: 30px;
     align-self: flex-end;
@@ -135,13 +145,35 @@ li{
     margin-right: 5px;
 }
 
-.favorite:active{
+.add:active{
     height: 30px;
     width: 30px;
     align-self: flex-end;
     justify-self: flex-end;
     margin-left: 5px;
     background: url("../../imgs/addActive.png");
+    background-size: 30px;
+    margin-right: 5px;
+}
+
+.remove{
+    height: 30px;
+    width: 30px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-left: 5px;
+    background: url("../../imgs/delete.png");
+    background-size: 30px;
+    margin-right: 5px;
+}
+
+.remove:active{
+    height: 30px;
+    width: 30px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-left: 5px;
+    background: url("../../imgs/deleteActive.png");
     background-size: 30px;
     margin-right: 5px;
 }

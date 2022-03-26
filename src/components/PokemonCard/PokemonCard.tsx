@@ -1,15 +1,31 @@
-
-import React from 'react'
-import { MAIN_COLOR} from '../../utils/constants'
 import './styles.css'
-import { PokemonsData } from '../../utils/interfaces'
+import { PokemonsCardProps } from '../../utils/interfaces'
+import male from "../../imgs/male.png";
+import female from "../../imgs/female.png";
 
-const PokemonCard = (props:PokemonsData) => {
+const PokemonCard = (props:PokemonsCardProps) => {
+
+  const pokemonsGender = () =>{
+    if (props.gender[0] === 'male') {
+      return male
+    }else{
+      return female
+    }
+  }
+
   return (
     <div className='PokemonCard'>
-      <div className="favorite"> </div>
+      { props.inHome
+        ?
+        <div onClick={ () => props.addPokemonUser(props.name)} className="add"> </div>
+        :
+        <div onClick={props.removePokemonUser} className="remove"> </div>
+      }
       <img className='pokemonImage' src={props.picture} alt="Pokemon Front"/>
-      <h1 className='Pokemon-name'>{props.name}</h1>
+      <div className='genderAndName'>
+        <h1 className='Pokemon-name'>{props.name}</h1>
+        {props.gender.length === 1 && <img className='gender' src={pokemonsGender()} alt="Pokemon's gender" />}
+      </div>
       <div className='Pokemon-types'>
         {props.types.map( type => <label className={`type ${type}`}>{type}</label>)}
       </div>

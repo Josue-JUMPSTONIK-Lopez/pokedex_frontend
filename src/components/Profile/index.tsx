@@ -1,6 +1,4 @@
-import React from 'react'
 import arrow  from '../../imgs/icons8-expand-arrow-96.png'
-import avatar from "../../imgs/ash-alola.png"
 import "./styles.css";
 import { useNavigate } from 'react-router-dom';
 import { ProfileProps } from '../../utils/interfaces';
@@ -23,7 +21,10 @@ export const Profile = (props: ProfileProps) => {
   <div className="dropdown-content">
     <button onClick={()=> navigate("/account")} className='dropdown--button'>Account</button>
     <button 
-    onClick={props.logOut} 
+    onClick={()=> {
+      props.logOut();
+      navigate("/")
+    }} 
     className='dropdown--button' >Logout</button>
   </div>
 </div>

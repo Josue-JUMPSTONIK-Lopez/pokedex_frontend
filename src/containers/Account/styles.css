@@ -58,6 +58,7 @@
 .FormUA--button{
     width: 100%;
     padding: 10px;
+    font-size: 2rem;
 }
 
 @media screen and (min-width: 319px) {

@@ -15,7 +15,18 @@ function Home(props:HomeProps) {
                     <PokemonList>
                       {props.listOfPokemons.filter((pokemon:PokemonsData) => 
                         pokemon.name.includes(props.searchPokemon))
-                        .map((pokemon:PokemonsData) => <PokemonCard key={pokemon.name} name={pokemon.name} picture={pokemon.picture} moves={pokemon.moves} gender={pokemon.gender} types={pokemon.types}/> )}
+                        .map((pokemon:PokemonsData) => 
+                        <PokemonCard 
+                        key={pokemon.name} 
+                        name={pokemon.name} 
+                        picture={pokemon.picture} 
+                        moves={pokemon.moves} 
+                        gender={pokemon.gender} 
+                        types={pokemon.types} 
+                        inHome={true}
+                        addPokemonUser={props.addPokemonUser}
+                        removePokemonUser={()=>{}}
+                        />)}
                     </PokemonList>
                     :
                     <p>Pokemons are not loaded still</p>
